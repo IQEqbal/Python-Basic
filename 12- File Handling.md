@@ -1,4 +1,5 @@
 > **text file :** the data is stored as text
+
 > **Binary file :** the data is stored as binary codes
 
 > we can create a text file in the IDE with `.txt` extension
