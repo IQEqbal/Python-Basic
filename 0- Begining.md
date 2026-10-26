@@ -53,4 +53,31 @@ it must be installed first
 ### 3- User-defined Modules
 we define it
 
+## hard coding
+it is hard coding
+```python 
+a = 10
+b = 20
+avg = 15 
+print(avg)
+```
+
+it is not hard coding
+```python
+a = 10
+b = 20
+avg = (a+b)/2
+print(avg)
+```
+
+
+
+
+## Chunk of code 
+in programing we have some chunks (chunk of code) that just makes it easier to read codes
+
+
+
+## Namespace 
+it is a place where python stores names like variables, function, objects, ...
 
