@@ -222,6 +222,6 @@ wlcome in Cyber security
 ```
 
 
-### `"a+`
+### `"a+"`
 for reading the position of `File Hanlde` is considered but 
 for writing the position of `File Hanlde` is not considered 
