@@ -4,8 +4,8 @@
 
 ```python
 with open( , ) as ObjName:
-line 1
-line 2
+	line 1
+	line 2
 ```
 
 > we can assign to a variable the data of a file `x = f.read()`
