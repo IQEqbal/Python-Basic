@@ -26,20 +26,67 @@ welcome.
 
 ```
 
-## Methods of File
-### `write()`
+## Methods of File .......ii
 
+### 1- `read()`
+it is used to read the file 
 
-### `close()`
+### 2- `write()`
+it is used to write in to file
+##### EX-1
+```python
+f = open("text.txt","w")
+f.write("Hello")
+f.close()
+```
+
+```
+text.txt
+Hello
+```
+
+### 3- `close()`
 it cuts the connection between the object and the file
 
-### `tell()`
+### 4- `tell()`
 it return the position of `File Handle`
 
-### `seek(a)`
+##### EX-1
+```
+text.txt
+Hello world!
+```
+
+```python
+f = open("text.txt","r")
+f.read(4)
+print(f.tell())
+```
+
+```
+4
+```
+
+### 5- `seek(a)`
 it is used to change the position of `File Handle`
 
-### `readline()`
+##### EX-1
+```
+Hello werld!
+welcome 
+```
+
+```python
+f = open("text.txt","r")
+f.seek(7)
+print(f.read())
+```
+
+```
+erld!
+welcome
+```
+### 6- `readline()`
 it reads a line of file 
 if the `File Handle` is at the beginning of a line, it reads all the characters in that line 
 if it is in the middle of a line, it reads from that position to the end of the line
@@ -62,7 +109,7 @@ print(f.readline())
 Hello, world
 
 ```
-### `readlies()`
+### 7- `readlies()`
 it puts each line in a `list` item 
 or other word it converts each line into a `list` item
 
@@ -85,18 +132,96 @@ print(f.readlines())
 
 
 
+## Mode .......ii
+
+> BoF: Beginning of File
+> EoF: End of File
+
+
+| Mode   | Description     | Position of File Handle |
+| ------ | --------------- | ----------------------- |
+| `"r"`  | Read            | BoF                     |
+| `"w"`  | Write           | BoF                     |
+| `"a"`  | Append          | EoF                     |
+| `"r+"` | Read and write  | BoF                     |
+| `"w+"` | Write and read  | BoF                     |
+| `"a+"` | Append and read | EoF                     |
+
+### `"r+"`
+it starts writing from the current position of the `File Handle`
+if `File Handle` was on a character and then we write our new text overwrites on the existing text
+
+when we use `read()` and then use `write()` Python can't get the position of `File Handle`
+because of this it appends instead of overwriting or writing
+the solution is after used `read()` we must use
+`f.seek(f.tell))`
+##### EX-1
+```
+text.txt
+Hello world;
+Software Engineering
+```
+
+```python
+f = open("text.txt","r+")
+print(f.readline())
+f.write("welcome to Cybersecurity")
+f.close()
+```
+
+```
+text.txt
+Hello world;
+Software Engineeringwelcome to Cybersecurity
+```
+
+##### EX-2
+```
+text.txt
+Hello world;
+Software Engineering
+```
+
+```python
+f = open("text.txt","r+")
+print(f.readline())
+f.seek(f.tell())
+f.write("welcome to Cybersecurity")
+f.close()
+```
+
+```
+text.txt
+Hello world;
+welcome to Cybersecurity
+```
 
 
 
+### `"w+"`
+first it deletes all of data in file then we can read and write 
+in reading and writing we must spot the position of `File Handle`
+
+```
+text.txt
+Hello world;
+Software Engineering
+```
+
+```python
+f = open("text.txt","w+")
+print(f.read())
+f.write("wlcome in Cyber security")
+f.seek(0)
+print(f.read())
+```
+
+```
+
+wlcome in Cyber security
+```
 
 
-
-
-
-
-
-
-
-
-
-
+### `"a+`
+for reading the position of `File Hanlde` is considered but 
+for writing the position of `File Hanlde` is not considered 
